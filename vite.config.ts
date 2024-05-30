@@ -13,13 +13,6 @@ export default defineConfig(({ mode }) => {
     plugins: [react()],
     server: {
       port: vite_port,
-      proxy: {
-        '/api': {
-          target: env.VITE_SOCIAL_API || 'http://localhost:3001',
-          changeOrigin: true,
-          rewrite: (path) => path.replace(/^\/api/, ''),
-        },
-      }
     },
     resolve: {
       alias: {
